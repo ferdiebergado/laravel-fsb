@@ -14,7 +14,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if ($this->app->environment('local')) {
+        // Load Telescope when in local environment
+        if ($this->app->isLocal()) {
             $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
             $this->app->register(TelescopeServiceProvider::class);
         }
@@ -27,8 +28,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Set default pagination views for TALL preset
         Paginator::defaultView('pagination::default');
-
         Paginator::defaultSimpleView('pagination::simple-default');
     }
 }
