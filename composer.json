@@ -17,6 +17,7 @@
         "livewire/livewire": "^1.2"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.7",
         "facade/ignition": "^2.0",
         "fruitcake/laravel-telescope-toolbar": "^1.2",
         "fzaninotto/faker": "^1.9.1",
